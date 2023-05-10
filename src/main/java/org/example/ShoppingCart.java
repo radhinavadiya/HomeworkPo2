@@ -1,5 +1,6 @@
 package org.example;
 
+import com.beust.ah.A;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -20,7 +21,7 @@ public class ShoppingCart extends Utils {
         String configuration =getTextFromElement(By.xpath("(//div[@class='attributes'])[2]"));
         String expected="Your product is ready to checkout";
         System.out.println(configuration);
-
+        Assert.assertNotEquals(configuration,"Your product is as per you requested");
         //checkbox
         clickOnElement(By.xpath("//input[@id='termsofservice']"));
         //click on checkout//input[@id='termsofservice']

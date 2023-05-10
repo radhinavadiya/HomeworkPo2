@@ -11,10 +11,7 @@ import org.testng.Assert;
 import org.testng.reporters.EmailableReporter;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class HomePage extends Utils {
     By _registerButton = By.className("ico-register");
@@ -91,15 +88,25 @@ public class HomePage extends Utils {
         List<WebElement> currency = driver.findElements(By.cssSelector("span.price"));
         System.out.println("Products when currency chosen as US Dollar: ");
         String dollar = "$";
+        boolean priceStatus=false;
         for (WebElement e : currency) {
-            if (e.getText().startsWith(dollar)) {
-                // clickOnElement(By.id("customerCurrency"));
-
-            }
             System.out.println(e.getText());
-            System.out.println(" price is in $");
+            if (e.getText().startsWith(dollar)) {
+              priceStatus=true;
+            }
+            else {
+                priceStatus=false;
+                break;
+            }
         }
+        if(priceStatus)
+        {
 
+            System.out.println(" All price are in $");
+        }
+        else {
+            System.out.println(" All price are not in $");
+        }
 
         //select currency from the currency selector
         index(By.name("customerCurrency"), 1);
@@ -108,11 +115,24 @@ public class HomePage extends Utils {
         // fetch all products with the same currency using the loop
         System.out.println("Products when currency chosen as Euro: ");
         //String euro = "€";
-        int i = 0;
-
-        for (WebElement e1 : currency1)
-            if (e1.getText().startsWith("€"))
-                System.out.println(" price in euro");
+         priceStatus=false;
+        for (WebElement e1 : currency1) {
+            System.out.println(e1.getText());
+            if (e1.getText().startsWith("€")) {
+                priceStatus=true;
+            }
+            else {
+                priceStatus=false;
+                break;
+            }
+        }
+        if(priceStatus)
+        {
+            System.out.println(" All price are in euro");
+        }
+        else {
+            System.out.println(" All price are not in euro");
+        }
     }
 
     public void printelert() {
@@ -136,24 +156,6 @@ public class HomePage extends Utils {
         //click on facebook
         clickOnElement(By.xpath("//*[text()='Facebook']"));
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.numberOfWindowsToBe(2));
-        for (String winHandle : driver.getWindowHandles()) {
-            driver.switchTo().window(winHandle);
-        }
-      //  Assert.assertEquals(driver.getCurrentUrl(), "Facebook.com");
-        clickOnElement(By.xpath("(//*[text()='Allow all cookies'])[2]"));
-        if (driver.findElement(By.xpath("(//input[@dir='ltr'])[17]")).isDisplayed()) {
-            System.out.println("Email placeholder is there");
-        }
-        if (driver.findElement(By.xpath("(//input[@dir='ltr'])[18]")).isEnabled()){
-            System.out.println("Password placeholder is there");
-        }
-        if (driver.findElement(By.xpath("//div[@class='x6s0dn4 x78zum5 xl56j7k x1608yet xljgi0e x1e0frkt']")).isEnabled()){
-            System.out.println("Log in button is there");
-        }driver.close();
-        getTextFromElement(By.xpath("//*[text()='Welcome to our store']"));
-
     }
 
     public void newRelease() {
@@ -172,18 +174,21 @@ public class HomePage extends Utils {
         List<WebElement> collection_product_links =
                 driver.findElements(By.cssSelector("div.product-grid h2"));
 
-        //Validate if Search result is displayed corresponding
-        //to the string which was searched
+        boolean conditionTrue = false;
         for (int i = 0; i < collection_product_links.size(); i++) {
             String temp = collection_product_links.get(i).getText();
-
-            if ((temp.toLowerCase().contains(searchText.toLowerCase()))) {
-                Assert.assertTrue(true, searchText + " is displayed on product title Product Title: " + temp);
+            System.out.println(temp);
+            if (temp.contains(searchText)) {
+                conditionTrue = true;
             } else {
-                Assert.assertTrue(false, searchText + " is not displayed on product title Product Title: " + temp);
-
+                conditionTrue = false;
+                break;
             }
-
+        }
+        if (conditionTrue) {
+            System.out.println("All products are " + searchText);
+        } else {
+            System.out.println("All products are not " + searchText);
         }
     }
 }

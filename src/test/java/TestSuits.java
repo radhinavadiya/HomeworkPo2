@@ -107,11 +107,12 @@ public class TestSuits extends TestBase {
 
     @Test
     public void verifyCurrency() {
-        homePage.currencySelect();}
+        homePage.currencySelect();
+    }
+
     @Test
-       public void verifySearchFunction(){
+    public void verifySearchFunction() {
 
         homePage.clickOnSearchButton("Nike");
-
     }
 }
