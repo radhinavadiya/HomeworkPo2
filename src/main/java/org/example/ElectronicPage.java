@@ -2,9 +2,7 @@ package org.example;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
 public class ElectronicPage extends Utils {
-
     public void addToCart() {
         String expectedResult = "Item has been added...";
         clickOnElement(By.xpath("(//a[@title='Show products in category Camera & photo'])[1]"));

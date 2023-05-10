@@ -7,11 +7,16 @@ public class TestSuits extends TestBase {
 
     // RegistredUserCanVote registredUserCanVote = new RegistredUserCanVote();
     ElectronicPage electronicPage = new ElectronicPage();
-    CompareList compareList = new CompareList();
+    ShoppingCart shoppingCart = new ShoppingCart();
     MailPageofBuildComp mailPageofBuildComp = new MailPageofBuildComp();
+    BillingOfBuildComputer billingOfBuildComputer = new BillingOfBuildComputer();
 
+    FacebookConnect facebookConnect = new FacebookConnect();
+    ShippingCopm shippingCopm = new ShippingCopm();
+    PaymentOfComputer paymentOfComputer = new PaymentOfComputer();
 
     BuildYourOwnComputerPage buildYourOwnComputerPage = new BuildYourOwnComputerPage();
+    NewReleaseProducts newReleaseProducts = new NewReleaseProducts();
 
     @Test
     public void c_verifyRegisterShouldBeSuccessfullydone() {
@@ -44,7 +49,7 @@ public class TestSuits extends TestBase {
     @Test
     public void f_verifyUserShouldBeableToCompareTwoProducts() {
         homePage.clickOnAddToCompareList();
-        compareList.clickOnCart();
+        shoppingCart.clickOnCart();
     }
 
     @Test
@@ -57,5 +62,56 @@ public class TestSuits extends TestBase {
     public void b_verifyNonRegistredUserCanNotDoMail() {
         homePage.clickOnBuldComputer();
         buildYourOwnComputerPage.buildOwnComputer();
+    }
+
+    @Test
+    public void printProductList() {
+        homePage.printOutProductNames();
+    }
+
+    @Test
+    public void verifySearchAlertMessage() {
+        homePage.printelert();
+    }
+
+    @Test
+    public void verifynonRegistredVoteAlert() {
+        homePage.voteWithoutSelecting();
+
+    }
+
+    @Test
+    public void verifyFacebookConnection() {
+        homePage.connectFacebook();
+        facebookConnect.facebookClick();
+    }
+
+    @Test
+    public void verifyCheckoutSuccessfulyAsAGuest() {
+        homePage.clickOnBuldComputer();
+
+        buildYourOwnComputerPage.chekoutAsGuest();
+        shoppingCart.cartOfBuildCopmuter();
+        billingOfBuildComputer.billingProcess();
+        shippingCopm.shiiping();
+        paymentOfComputer.payment();
+    }
+
+    @Test
+    public void verifyNewReleaseCommentComesAtLast() {
+        homePage.newRelease();
+        newReleaseProducts.newReleaseProductComment();
+
+
+    }
+
+    @Test
+    public void verifyCurrency() {
+        homePage.currencySelect();}
+    @Test
+       public void verifySearchFunction(){
+
+        homePage.clickOnSearchButton("Nike");
+
     }
 }
