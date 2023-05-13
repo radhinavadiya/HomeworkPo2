@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="726430a2-2ddf-4e32-907f-77476763e547" name="Changes" comment="exercise 2">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Test/config/TestData.Properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FacebookConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FacebookConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ShoppingCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestSuits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestSuits.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,12 +66,30 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestSuits.verifyCurrency">
-    <configuration name="TestSuits.c_verifyRegisterShouldBeSuccessfullydone" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.LoadProp.verifymyLoadprop">
+    <configuration name="LoadProp.verifymyLoadprop" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="PoExercise02" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.LoadProp" />
+      <option name="METHOD_NAME" value="verifymyLoadprop" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSuits.verifyCheckoutSuccessfulyAsAGuest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="PoExercise02" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestSuits" />
-      <option name="METHOD_NAME" value="c_verifyRegisterShouldBeSuccessfullydone" />
+      <option name="METHOD_NAME" value="verifyCheckoutSuccessfulyAsAGuest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -125,25 +145,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSuits.verifynonRegistredVoteAlert" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="PoExercise02" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestSuits" />
-      <option name="METHOD_NAME" value="verifynonRegistredVoteAlert" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.LoadProp.verifymyLoadprop" />
+        <item itemvalue="TestNG.TestSuits.verifyFacebookConnection" />
+        <item itemvalue="TestNG.TestSuits.verifyCheckoutSuccessfulyAsAGuest" />
         <item itemvalue="TestNG.TestSuits.verifyCurrency" />
         <item itemvalue="TestNG.TestSuits.verifySearchFunction" />
-        <item itemvalue="TestNG.TestSuits.verifynonRegistredVoteAlert" />
-        <item itemvalue="TestNG.TestSuits.verifyFacebookConnection" />
-        <item itemvalue="TestNG.TestSuits.c_verifyRegisterShouldBeSuccessfullydone" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683746031421</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="exercise 2">
+      <created>1683752451780</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683752451780</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -183,7 +198,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Utils.java</url>
-          <line>10</line>
+          <line>17</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">

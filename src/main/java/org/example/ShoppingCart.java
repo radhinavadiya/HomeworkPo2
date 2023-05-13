@@ -28,6 +28,6 @@ public class ShoppingCart extends Utils {
         clickOnElement(By.xpath("(//button[@type='submit'])[6]"));
         //checkout as guest
         clickOnElement(By.xpath("//*[text()='Checkout as Guest']"));
-       // Assert.assertEquals(configuration,expected);
+        Assert.assertNotEquals(configuration,expected);
     }
 }

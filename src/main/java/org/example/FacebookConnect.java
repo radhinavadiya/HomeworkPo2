@@ -7,8 +7,10 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.net.URL;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Set;
 import java.util.function.Function;
 
 public class FacebookConnect extends Utils {
@@ -20,20 +22,27 @@ public class FacebookConnect extends Utils {
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        //  Assert.assertEquals(driver.getCurrentUrl(), "Facebook.com");
+
+        Assert.assertNotEquals(driver.getCurrentUrl(), "Facebook.com");
         clickOnElement(By.xpath("(//*[text()='Allow all cookies'])[2]"));
-        if (driver.findElement(By.xpath("(//input[@dir='ltr'])[17]")).isDisplayed()) {
+        //check for email function
+        if (isEnabled(By.xpath("(//input[@dir='ltr'])[17]"))) {
             System.out.println("Email placeholder is there");
+
         }
-        if (driver.findElement(By.xpath("(//input[@dir='ltr'])[18]")).isEnabled()) {
+        if (isEnabled(By.xpath("(//input[@dir='ltr'])[18]"))) {
             System.out.println("Password placeholder is there");
         }
-        if (driver.findElement(By.xpath("//div[@class='x6s0dn4 x78zum5 xl56j7k x1608yet xljgi0e x1e0frkt']")).isEnabled()) {
+        if (isEnabled(By.xpath("//div[@class='x6s0dn4 x78zum5 xl56j7k x1608yet xljgi0e x1e0frkt']"))) {
             System.out.println("Log in button is there");
         }
         driver.close();
-        getTextFromElement(By.xpath("//*[text()='Welcome to our store']"));
+        for (String mainwindow : driver.getWindowHandles()) {
+            driver.switchTo().window(mainwindow);
 
+            String actualmsg = getTextFromElement(By.xpath("//*[text()='Welcome to our store']"));
+            Assert.assertEquals(actualmsg, "Wellcome to our store....");
+        }
     }
 }
 

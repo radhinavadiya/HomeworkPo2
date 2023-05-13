@@ -5,7 +5,7 @@ public class TestSuits extends TestBase {
     HomePage homePage = new HomePage();
     RegistrationDetails registrationDEtails = new RegistrationDetails();
 
-    // RegistredUserCanVote registredUserCanVote = new RegistredUserCanVote();
+    //RegistredUserCanVote registredUserCanVote = new RegistredUserCanVote();
     ElectronicPage electronicPage = new ElectronicPage();
     ShoppingCart shoppingCart = new ShoppingCart();
     MailPageofBuildComp mailPageofBuildComp = new MailPageofBuildComp();

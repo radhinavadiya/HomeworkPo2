@@ -1,10 +1,17 @@
 package org.example;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 
+import java.io.File;
+import java.io.IOException;
+import  java.util.Date;
+//import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 public class Utils extends BasePage {
     public static void clickOnElement(By by) {
@@ -48,5 +55,27 @@ public class Utils extends BasePage {
         Select select = new Select(driver.findElement(by));
         select.selectByValue(value);
 
-    }
-}
+    }public boolean isEnabled(By by){
+        driver.findElement(by).isEnabled();
+        return true;
+    }public static String currentTimeStamp() {
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyhhmmss");
+        return sdf.format(date);
+    }public static void captureScreenshot( String fileName)
+    {
+        //Convert web driver object to TakeScreenshot
+        TakesScreenshot scrShot =((TakesScreenshot)driver);
+        //Call getScreenshotAs method to create image file
+        File
+                SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+        //Move image file to new destination
+        File destFile=new
+                File("src\\test\\Screenshots\\"+fileName+""+currentTimeStamp()+".png");
+        //Copy file at destination
+        try {
+            FileUtils.copyFile(SrcFile, destFile );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+}}
