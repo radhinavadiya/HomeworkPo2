@@ -1,3 +1,5 @@
+package org.example;
+
 import org.example.*;
 import org.testng.annotations.Test;
 
@@ -14,7 +16,7 @@ public class TestSuits extends TestBase {
     FacebookConnect facebookConnect = new FacebookConnect();
     ShippingCopm shippingCopm = new ShippingCopm();
     PaymentOfComputer paymentOfComputer = new PaymentOfComputer();
-
+RegisterResult registerResult =new RegisterResult();
     BuildYourOwnComputerPage buildYourOwnComputerPage = new BuildYourOwnComputerPage();
     NewReleaseProducts newReleaseProducts = new NewReleaseProducts();
 
@@ -23,6 +25,7 @@ public class TestSuits extends TestBase {
         //  verifyUserShouldRegisterSuccessful();
         homePage.clickOnRegisterButton();
         registrationDEtails.EnterRegistrationDetails();
+        registerResult.registerSuccess();
     }
 
     @Test
